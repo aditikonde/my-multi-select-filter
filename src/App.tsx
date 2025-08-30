@@ -7,7 +7,7 @@ export const App: React.FunctionComponent = () => {
           <h1 className='text-2xl sm:text-3xl font-semibold tracking-tight'>
             Multi-Select Filter
           </h1>
-          <p className='text-sm text-gray-600'>
+          <p className='italic text-sm text-gray-600'>
             Helps you search, filter and select through a large dataset
           </p>
         </header>
