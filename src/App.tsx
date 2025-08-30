@@ -1,4 +1,6 @@
 import React from 'react';
+import MultiSelectFilterPanel from './components/MultiSelectFilterPanel';
+
 export const App: React.FunctionComponent = () => {
   return (
     <div className='min-h-screen p-6 sm:p-12'>
@@ -12,7 +14,7 @@ export const App: React.FunctionComponent = () => {
           </p>
         </header>
         <section className='p-4 sm:p-6 rounded-lg border shadow-lg border-zinc-200'>
-          Filter panel
+          <MultiSelectFilterPanel />
         </section>
       </div>
     </div>
