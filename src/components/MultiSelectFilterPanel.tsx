@@ -29,6 +29,8 @@ const MultiSelectFilterPanel: React.FunctionComponent = () => {
     );
   };
 
+  const handleClearAll = () => setSelectedItems([]);
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -43,6 +45,7 @@ const MultiSelectFilterPanel: React.FunctionComponent = () => {
         <SelectedItems
           selectedItems={selectedItems}
           handleAddRemoveItem={handleAddRemoveSelectedItem}
+          handleClearAll={handleClearAll}
         />
       )}
       <ItemList

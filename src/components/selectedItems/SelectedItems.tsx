@@ -3,10 +3,12 @@ import React from 'react';
 interface ISelectedItemsProps {
   selectedItems: string[];
   handleAddRemoveItem: (value: string) => void;
+  handleClearAll: () => void;
 }
 const SelectedItems: React.FunctionComponent<ISelectedItemsProps> = ({
   selectedItems,
   handleAddRemoveItem,
+  handleClearAll,
 }) => {
   return (
     <div className='mt-6 mb-2'>
@@ -28,6 +30,16 @@ const SelectedItems: React.FunctionComponent<ISelectedItemsProps> = ({
           </li>
         ))}
       </ul>
+      <div className='mt-4'>
+        <button
+          type='button'
+          onClick={handleClearAll}
+          className='uppercase text-rose-600 text-sm px-2 py-1 rounded-lg border border-red-300 bg-red-50 hover:bg-red-200'
+          aria-label='Clear all selected'
+        >
+          Clear all
+        </button>
+      </div>
     </div>
   );
 };
