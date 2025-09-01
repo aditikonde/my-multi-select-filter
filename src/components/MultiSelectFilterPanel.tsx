@@ -4,11 +4,15 @@ import { GET_ITEMS } from '../queries/queries';
 import SearchBar from './searchBar/SearchBar';
 import ItemList from './itemList/ItemList';
 import SelectedItems from './selectedItems/SelectedItems';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const MultiSelectFilterPanel: React.FunctionComponent = () => {
   const { data, loading, error } = useQuery(GET_ITEMS);
   const [queryForItems, setQueryForItems] = useState('');
-  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+  const [selectedItems, setSelectedItems] = useLocalStorage<string[]>(
+    'selectedItems',
+    []
+  );
 
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
