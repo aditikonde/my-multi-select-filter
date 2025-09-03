@@ -21,15 +21,17 @@ const MultiSelectFilterPanel: React.FunctionComponent = () => {
     const queryLowerCase = queryForItems.trim().toLowerCase();
 
     return (data?.items ?? [])
-      .filter((x: string) => !selectedItems.includes(x))
-      .filter((x: string) =>
-        queryLowerCase ? x.toLowerCase().includes(queryLowerCase) : true
+      .filter((i: string) => !selectedItems.includes(i))
+      .filter((str: string) =>
+        queryLowerCase ? str.toLowerCase().includes(queryLowerCase) : true
       );
   }, [data?.items, queryForItems, selectedItems]);
 
   const handleAddRemoveSelectedItem = (value: string) => {
     setSelectedItems((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+      prev.includes(value)
+        ? prev.filter((val) => val !== value)
+        : [...prev, value]
     );
   };
 
